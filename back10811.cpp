@@ -1,5 +1,4 @@
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 
@@ -17,12 +16,18 @@ int main() {
     for (int i = 0; i < M; i++) {
         cin >> a >> b;
 
-        reverse(arr + a-1, arr + b-1);
-        
+        while (a < b) {
+            swap(arr[a - 1], arr[b - 1]);
+            a++;
+            b--;
+        }
     }
 
     for (int i = 0; i < N; i++) {
         cout << arr[i];
+        if (i < N - 1) {
+            cout << " "; 
+        }
     }
     return 0;
 }

@@ -3,7 +3,7 @@
 
 using namespace std;
 int main() {
-    /*
+    
     string S;
     string Word;
     int T;                      //반복횟수

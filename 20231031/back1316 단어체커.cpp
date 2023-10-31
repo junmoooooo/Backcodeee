@@ -9,9 +9,7 @@ int main() {
 	int count = 0;                        // 그룹 단어가 아니라면 카운트
 
 	cin >> N;
-	cin.ignore();
-	
-	for (int n = 0; n < N; n++) {
+	for (int i = 0; i < N; i++) {
 		getline(cin,word);
         
 		// 단어에서 알파벳 문자의 출현유무를 나타내는 배열 (출현없으면 false)

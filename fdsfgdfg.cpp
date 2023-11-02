@@ -1,25 +1,32 @@
 #include <iostream>
-
+#include <map>
 using namespace std;
-int main () {
+int main(void) {
 
-    int banana;
-    int count;
+    map<string, int> mapset;
+	mapset.insert({ "Alice", 100 });
+	mapset.insert({ "Bob", 200 });
 
-	cin >> banana >> count;
+	if (mapset.find({"Alice"}) != mapset.end()) 
+	{
+		cout << "find" << endl;
+	}
+	else {
+		cout << "not find" << endl;
+	}
 
-    for (int i = 0; i < banana; i++){
-        if (banana >= count) {
-            cout << "uwow ~~~~uwow ~~~~uwow ~~~~";
-            banana--;
-        }else{
-            cout << "배가고파 소리를 지를 수 없습니다";
-        }
+	//인덱스기반
+	for (auto iter = mapset.begin() ; iter !=  mapset.end(); iter++)
+	{
+		cout << iter->first << " " << iter->second << endl;
+	}
+	cout << endl;
 
-    }
+	//범위기반
+	for (auto iter : mapset) {
+		cout << iter.first << " " << iter.second << endl;
+	}
 
-    cout << "바나나를 count개 먹었습니다.";
-
-    return 0;
-
+    cout << mapset["Alice"];
+	return 0;
 }
